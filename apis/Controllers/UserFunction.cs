@@ -16,14 +16,13 @@ namespace apis.Controllers
         [HttpGet]
         public ActionResult<List<Restaurant>> RestaurantList(int page,int limit)
         {
-            RestInfoDTO restInf = new RestInfoDTO();
-            
-            var count = GetrContext.Context.Restaurants.Count();
             var rest = GetrContext.Context.Restaurants.Skip(page * limit - limit).ToList();
+            var count = GetrContext.Context.Restaurants.Count();
             List<RestInfoDTO> restdto = RestInfoDTO.ConvertToDTO(rest);
+
             if (rest != null)
             {
-                return Content(JsonConvert.SerializeObject(restdto, serializerSettings));
+                return Content(JsonConvert.SerializeObject(new { count , data = restdto }, serializerSettings));
             }
             return BadRequest();
         }
