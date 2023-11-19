@@ -16,6 +16,20 @@ namespace apis.ModelDTO
 
         public int? RestaurantTableCount { get; set; }
 
+        public static RestInfoDTO ConvertToDto(Restaurant restaurant)
+        {
+            var dto = new RestInfoDTO();
+
+            dto.RestaurantId = restaurant.RestaurantId;
+            dto.RestaurantName = restaurant.RestaurantName;
+            dto.RestaurantAdress = restaurant.RestaurantAdress;
+            dto.RestaurantDiscription = restaurant?.RestaurantDiscription;
+            dto.RestaurantFood = restaurant.RestaurantFood;
+            dto.RestaurantTableCount = restaurant.RestaurantTableCount;
+
+            return dto;
+        }
+
         public static List<RestInfoDTO> ConvertToDTO(List<Restaurant> restaurant)
         {
             List<RestInfoDTO> dto = new List<RestInfoDTO>();

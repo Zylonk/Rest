@@ -28,7 +28,7 @@ namespace apis.Controllers
             GetrContext.Context.SaveChanges();
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete] 
         [Route("/admin/restaurant/remove")]
         public ActionResult<Restaurant> RemoveRestaurant(string restID) {
             List<Restaurant> rest = GetrContext.Context.Restaurants.ToList().Where(x => x.RestaurantId == restID).ToList();

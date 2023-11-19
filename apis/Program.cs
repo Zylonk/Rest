@@ -16,6 +16,12 @@ options.MapType<DateOnly>(() => new OpenApiSchema
     Example = new OpenApiString("2022-01-01")
 })
 );
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Policy", builder =>
+        builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()
+    );
+});
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -26,4 +32,5 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+app.UseCors("Policy");
 app.Run();
