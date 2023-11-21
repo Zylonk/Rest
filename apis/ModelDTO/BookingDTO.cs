@@ -22,5 +22,17 @@ namespace apis.ModelDTO
             bookingDTO.BookingVisitsofdata = booking.BookingVisitsofdata;
             return bookingDTO;
         }
+
+        public static BookingDTO ConvertBookingToDTO(Booking booking)
+        {
+            BookingDTO bookingDTO = new BookingDTO();
+            bookingDTO.Id = booking.BookingId;
+            bookingDTO.BookingRestaurant = booking.BookingRestaurant;
+            bookingDTO.BookingGuestInfo = booking.BookingGuestInfo;
+            bookingDTO.BookingWish = booking.BookingWish;
+            bookingDTO.BookingVisitsofdata = booking.BookingVisitsofdata;
+
+            return bookingDTO;
+        }
     }
 }
