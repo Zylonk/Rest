@@ -1,0 +1,22 @@
+.items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.list {
+  margin-top: 25px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  margin-top: 25px;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}

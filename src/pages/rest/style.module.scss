@@ -1,0 +1,49 @@
+.breadcrumb {
+  margin-top: 50px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 36px;
+
+  margin: 48px 0 !important;
+}
+
+.description {
+  color: rgba(#000, 0.7);
+  font-size: 24px !important;
+  max-width: 500px;
+}
+
+.imageContainer {
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.contentContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  img {
+    display: block;
+    width: 100%;
+
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.bookInner {
+  display: flex;
+  gap: 12px;
+}
+
+.bookText {
+  font-size: 24px;
+  color: rgba(#000, 0.7);
+
+  margin: 12px 0 !important;
+}

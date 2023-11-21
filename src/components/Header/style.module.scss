@@ -1,0 +1,14 @@
+.bar {
+  padding: 12px;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
